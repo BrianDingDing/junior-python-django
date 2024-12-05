@@ -25,5 +25,17 @@
         {% endfor %}
     </ul>
 
+
+    {% if name == "zly" %}
+        <!-- 直接写静态文件的url路由获取 -->
+       <img src="/static/images/http.jpeg">
+    {% elif name == "gyy" %}
+        <!-- 引入static标签, 通过标签获取, 只需load一次就行了 -->
+       {% load static %}
+       <img src="{% static 'images/http.jpeg' %}">
+    {% else %}
+        <h1>刘亦菲图片假装有</h1>
+    {% endif %}
+
 </body>
 </html>
