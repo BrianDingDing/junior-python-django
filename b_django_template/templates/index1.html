@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+</head>
+<body>
+
+    <!-- upper为过滤器 -->
+    <h2>姓名: {{ name | upper }}</h2>
+    <h2>年龄: {{ age }}</h2>
+    <!-- 列表可以用 变量.索引 -->
+    <h2>兴趣: {{ hobby.0 }}</h2>
+    <!-- 字典可以用 变量.键 -->
+    <h2>描述: {{ description.job }}</h2>
+    <!-- 对象可以用 对象.属性值 -->
+    <h2>对象: {{ person.sex }}</h2>
+    <!-- 函数得到函数返回值 -->
+    <h2>函数: {{ func }}</h2>
+
+</body>
+</html>
