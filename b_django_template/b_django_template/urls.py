@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
     path('index1/', views.index1),
+    path('flags/<str:name>/', views.index2),
 ]

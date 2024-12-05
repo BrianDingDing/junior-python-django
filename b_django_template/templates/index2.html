@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+</head>
+<body>
+
+    <!-- 标签里面使用变量无需用双花括号, 运算符两侧注意加上空格 -->
+    {% if name == "zly" %}
+        <h1>赵丽颖图片假装有</h1>
+    {% elif name == "gyy" %}
+        <h1>gyy图片假装有</h1>
+    {% else %}
+        <h1>刘亦菲图片假装有</h1>
+    {% endif %}
+
+
+    <ul>
+        {% for item in data_list %}
+            <li>{{ item }}</li>
+        <!-- 如果没有变量data_list时执行empty -->
+        {% empty %}
+            <li>没有内容了</li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>

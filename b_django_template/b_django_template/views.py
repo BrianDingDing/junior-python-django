@@ -45,3 +45,10 @@ def index1(request):
     print(locals())
 
     return render(request, 'index1.html', locals())
+
+
+# 模板标签处理
+def index2(request, name):
+    # {request: xxx, name: xxx, data_list: xxx}
+    data_list = ["张三丰", "张无忌", "张翠山"]
+    return render(request, "index2.html", locals())
