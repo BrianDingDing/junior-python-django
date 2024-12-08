@@ -2,6 +2,7 @@ from django.http import HttpResponse, HttpRequest, HttpResponseRedirect, HttpRes
 
 # 引入settings中设置的变量
 from django.conf import settings
+from django.views import View
 
 
 def index(request):
@@ -127,3 +128,14 @@ def handle_response_child(request):
     return HttpResponseRedirect(
         redirect_to="/response/"
     )
+
+
+# 基于面向对象的方法进行请求处理 CV class View
+class MyView(View):
+
+    def get(self, request, name):
+        print(name)
+        return HttpResponse("我处理了GET请求")
+
+    def post(self, request):
+        return HttpResponse("我处理了POST请求")

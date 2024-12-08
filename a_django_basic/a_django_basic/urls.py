@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.views.generic import TemplateView, RedirectView
+
 from . import views
+from .views import MyView
+
 """
     补充解释:
     1. url.py 如果写/, e.g path('index/', views.index); get请求因为会在请求path结尾自动添加/(P.S Post不行), 所以浏览器访问时.
@@ -54,6 +58,12 @@ urlpatterns = [
 
     # http响应的处理
     path('response/', views.handle_response),
-    path('response/child', views.handle_response_child)
+    path('response/child', views.handle_response_child),
+
+    # 通用视图使用
+    path('templateView/', TemplateView.as_view(template_name='TemplateView.html')),
+    path('daxin/', RedirectView.as_view(url='/templateView/')),
+
+    path('myview/<str:name>/', MyView.as_view()),
 
 ]
